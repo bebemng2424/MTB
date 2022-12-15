@@ -94,9 +94,9 @@ public class Transaction extends javax.swing.JFrame {
                     myFormat.setGroupingUsed(true);
                     printreceipt.setText(printreceipt.getText() + "\n" + bankname.getText() + "\n");
                     printreceipt.setText(printreceipt.getText() + "\n" + accnumber.getText() + "\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(balance) + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + bankname.getText() + "-> " + chosenbank + "Bank-to-Bank Transaction: ₱" + myFormat.format(balance) + "- ₱15(Deduction fee)" + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(newbalance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(balance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + bankname.getText() + "-> " + chosenbank + "Bank-to-Bank Transaction: PHP " + myFormat.format(balance) + "- PHP       15(Deduction fee)" + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(newbalance) + "\n\n");
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Error!");
@@ -166,7 +166,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         }
 
-        public void Withdraw() {
+        public void Withdraw()       {
             getId();
             String Query = "Update bankaccounts set Balance=? Where ID=?";
 
@@ -198,9 +198,9 @@ public class Transaction extends javax.swing.JFrame {
                     myFormat.setGroupingUsed(true);
                     printreceipt.setText(printreceipt.getText() + "\n" + bankname.getText() + "\n");
                     printreceipt.setText(printreceipt.getText() + "\n" + accnumber.getText() + "\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(balance) + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + "Transaction: Withdraw ₱" + myFormat.format(balance) + "- ₱" + MyFormat.format(withdraw) + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(newbalance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(balance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Transaction: Withdraw PHP " + myFormat.format(balance) + "- PHP " + MyFormat.format(withdraw) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(newbalance) + "\n\n");
                     todeduct();
 
                     WithdrawAmount.setText("");
@@ -234,7 +234,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         }
 
-        public void Deposit() {
+        public void Deposit()       {
 
             getId();
             String Query = "Update bankaccounts set Balance=? Where ID=?";
@@ -255,9 +255,9 @@ public class Transaction extends javax.swing.JFrame {
                     NumberFormat myFormat = NumberFormat.getInstance();
                     printreceipt.setText(printreceipt.getText() + "\n" + bankname.getText() + "\n");
                     printreceipt.setText(printreceipt.getText() + "\n" + accnumber.getText() + "\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(balance) + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + "Transaction: Deposit ₱" + myFormat.format(balance) + "+" + deposit + "\n\n");
-                    printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(newbalance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(balance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Transaction: Deposit PHP " + myFormat.format(balance) + "+" + deposit + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(newbalance) + "\n\n");
                     todeduct();
 
                     toreceipt.setVisible(true);
@@ -289,7 +289,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         }
 
-        public void Transfer() {
+        public void Transfer()       {
             if (transferamount.getText().equals("") || transferaccnum.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please input the required information!");
             } else if (transferaccnum.getText().equals(Accnumbetb.getText())) {
@@ -326,10 +326,10 @@ public class Transaction extends javax.swing.JFrame {
                             myFormat.setGroupingUsed(true);
                             printreceipt.setText(printreceipt.getText() + "\n" + bankname.getText() + "\n");
                             printreceipt.setText(printreceipt.getText() + "\n" + accnumber.getText() + "\n");
-                            printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(balance) + "\n\n");
-                            printreceipt.setText(printreceipt.getText() + "Transaction: Transfer ₱" + myFormat.format(balance) + "-" + transfer + "\n\n");
-                            printreceipt.setText(printreceipt.getText() + "Transferred to: " + transferacc + " ₱" + myFormat.format(balance) + "+" + transfer + "\n\n");
-                            printreceipt.setText(printreceipt.getText() + "Balance: ₱" + myFormat.format(newbalance) + "\n\n");
+                            printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(balance) + "\n\n");
+                            printreceipt.setText(printreceipt.getText() + "Transaction: Transfer PHP " + myFormat.format(balance) + "-" + transfer + "\n\n");
+                            printreceipt.setText(printreceipt.getText() + "Transferred to: " + transferacc + " PHP " + myFormat.format(balance) + "+" + transfer + "\n\n");
+                            printreceipt.setText(printreceipt.getText() + "Balance: PHP " + myFormat.format(newbalance) + "\n\n");
                             if (sameacc) {
                                 transferaccnum.setText("");
                                 transferaccnum.requestFocus();
@@ -387,7 +387,7 @@ public class Transaction extends javax.swing.JFrame {
                     accnumber.setText("Account Number: " + Rs.getString(2));
                     printreceipt.setText(printreceipt.getText() + "\n" + bankname.getText() + "\n");
                     printreceipt.setText(printreceipt.getText() + "\n" + accnumber.getText() + "\n");
-                    printreceipt.setText(printreceipt.getText() + "Transaction: View Balance ₱" + myFormat.format(balance) + "\n\n");
+                    printreceipt.setText(printreceipt.getText() + "Transaction: View Balance PHP " + myFormat.format(balance) + "\n\n");
                     todeduct();
 
                     hidepane();
@@ -416,6 +416,7 @@ public class Transaction extends javax.swing.JFrame {
         PNB = new javax.swing.JButton();
         BDO = new javax.swing.JButton();
         LBP = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         transaction = new javax.swing.JLayeredPane();
         transfer = new javax.swing.JButton();
         viewbalance = new javax.swing.JButton();
@@ -472,14 +473,14 @@ public class Transaction extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         EnterPin.setForeground(new java.awt.Color(255, 255, 255));
         EnterPin.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Enter PIN:");
 
@@ -508,28 +509,27 @@ public class Transaction extends javax.swing.JFrame {
         EnterPinLayout.setHorizontalGroup(
             EnterPinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EnterPinLayout.createSequentialGroup()
+                .addGap(146, 146, 146)
                 .addGroup(EnterPinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(EnterPinLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel2))
-                    .addGroup(EnterPinLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(230, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2)))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         EnterPinLayout.setVerticalGroup(
             EnterPinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EnterPinLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(124, 124, 124)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         Accnumber.setForeground(new java.awt.Color(255, 255, 255));
 
-        Accnumbetb.setBackground(new java.awt.Color(153, 153, 153));
+        Accnumbetb.setBackground(new java.awt.Color(102, 102, 102));
         Accnumbetb.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         Accnumbetb.setForeground(new java.awt.Color(255, 255, 255));
         Accnumbetb.addActionListener(new java.awt.event.ActionListener() {
@@ -546,7 +546,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Enter Account Number:");
 
@@ -558,23 +558,27 @@ public class Transaction extends javax.swing.JFrame {
         AccnumberLayout.setHorizontalGroup(
             AccnumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AccnumberLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addGroup(AccnumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Accnumbetb, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGroup(AccnumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AccnumberLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(Accnumbetb, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AccnumberLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel1)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         AccnumberLayout.setVerticalGroup(
             AccnumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AccnumberLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
+                .addGap(116, 116, 116)
                 .addComponent(jLabel1)
-                .addGap(63, 63, 63)
+                .addGap(26, 26, 26)
                 .addComponent(Accnumbetb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         BPI.setBackground(new java.awt.Color(255, 0, 0));
+        BPI.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         BPI.setForeground(new java.awt.Color(255, 255, 255));
         BPI.setText("BPI");
         BPI.addActionListener(new java.awt.event.ActionListener() {
@@ -583,8 +587,9 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        PNB.setBackground(new java.awt.Color(102, 102, 255));
-        PNB.setForeground(new java.awt.Color(255, 0, 0));
+        PNB.setBackground(new java.awt.Color(0, 153, 255));
+        PNB.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PNB.setForeground(new java.awt.Color(255, 255, 255));
         PNB.setText("PNB");
         PNB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -592,7 +597,8 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        BDO.setBackground(new java.awt.Color(0, 204, 0));
+        BDO.setBackground(new java.awt.Color(0, 0, 255));
+        BDO.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         BDO.setForeground(new java.awt.Color(255, 255, 0));
         BDO.setText("BDO");
         BDO.addActionListener(new java.awt.event.ActionListener() {
@@ -602,6 +608,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         LBP.setBackground(new java.awt.Color(255, 255, 0));
+        LBP.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         LBP.setForeground(new java.awt.Color(51, 102, 0));
         LBP.setText("LBP");
         LBP.addActionListener(new java.awt.event.ActionListener() {
@@ -610,42 +617,53 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel13.setText("Choose your bank ATM ");
+
         choosebank.setLayer(BPI, javax.swing.JLayeredPane.DEFAULT_LAYER);
         choosebank.setLayer(PNB, javax.swing.JLayeredPane.DEFAULT_LAYER);
         choosebank.setLayer(BDO, javax.swing.JLayeredPane.DEFAULT_LAYER);
         choosebank.setLayer(LBP, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        choosebank.setLayer(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout choosebankLayout = new javax.swing.GroupLayout(choosebank);
         choosebank.setLayout(choosebankLayout);
         choosebankLayout.setHorizontalGroup(
             choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(choosebankLayout.createSequentialGroup()
-                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BPI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PNB, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
-                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BDO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LBP, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PNB, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBP, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BDO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BPI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(choosebankLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel13)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         choosebankLayout.setVerticalGroup(
             choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, choosebankLayout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
-                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BDO)
-                    .addComponent(BPI))
+                    .addComponent(LBP))
                 .addGap(48, 48, 48)
-                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LBP)
-                    .addComponent(PNB))
+                .addGroup(choosebankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PNB)
+                    .addComponent(BPI))
                 .addGap(51, 51, 51))
         );
 
         transaction.setForeground(new java.awt.Color(255, 255, 255));
 
-        transfer.setBackground(new java.awt.Color(102, 102, 102));
-        transfer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        transfer.setBackground(new java.awt.Color(0, 102, 255));
+        transfer.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         transfer.setForeground(new java.awt.Color(255, 255, 255));
         transfer.setText("Transfer");
         transfer.setBorderPainted(false);
@@ -655,8 +673,8 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        viewbalance.setBackground(new java.awt.Color(102, 102, 102));
-        viewbalance.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        viewbalance.setBackground(new java.awt.Color(0, 102, 255));
+        viewbalance.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         viewbalance.setForeground(new java.awt.Color(255, 255, 255));
         viewbalance.setText("View Balance");
         viewbalance.setBorderPainted(false);
@@ -666,8 +684,8 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        withdraw.setBackground(new java.awt.Color(102, 102, 102));
-        withdraw.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        withdraw.setBackground(new java.awt.Color(0, 102, 255));
+        withdraw.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         withdraw.setForeground(new java.awt.Color(255, 255, 255));
         withdraw.setText("Withdraw");
         withdraw.setBorderPainted(false);
@@ -678,9 +696,9 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         EJECTd.setBackground(new java.awt.Color(255, 0, 0));
-        EJECTd.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        EJECTd.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         EJECTd.setForeground(new java.awt.Color(255, 255, 255));
-        EJECTd.setText("Eject Card");
+        EJECTd.setText("LOG OUT");
         EJECTd.setBorderPainted(false);
         EJECTd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -688,8 +706,8 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        deposit1.setBackground(new java.awt.Color(102, 102, 102));
-        deposit1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        deposit1.setBackground(new java.awt.Color(0, 102, 255));
+        deposit1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         deposit1.setForeground(new java.awt.Color(255, 255, 255));
         deposit1.setText("Deposit");
         deposit1.setBorderPainted(false);
@@ -699,8 +717,8 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 102, 255));
         jLabel8.setText("Welcome to PEU Bank");
 
         transaction.setLayer(transfer, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -716,29 +734,29 @@ public class Transaction extends javax.swing.JFrame {
             transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(transactionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(transactionLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel8)
-                        .addGap(50, 72, Short.MAX_VALUE))
-                    .addGroup(transactionLayout.createSequentialGroup()
-                        .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(viewbalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(withdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(deposit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(EJECTd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(withdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewbalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(transfer, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(deposit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(transactionLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(EJECTd, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(transactionLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel8)
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         transactionLayout.setVerticalGroup(
             transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(transactionLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewbalance)
                     .addComponent(transfer))
@@ -746,32 +764,31 @@ public class Transaction extends javax.swing.JFrame {
                 .addGroup(transactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(withdraw)
                     .addComponent(deposit1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addComponent(EJECTd)
-                .addGap(39, 39, 39))
+                .addGap(23, 23, 23))
         );
 
         ViewBalance.setForeground(new java.awt.Color(255, 255, 255));
 
-        bankname.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        bankname.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         bankname.setForeground(new java.awt.Color(255, 255, 255));
         bankname.setText("BankName");
 
-        accnumber.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        accnumber.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         accnumber.setForeground(new java.awt.Color(255, 255, 255));
         accnumber.setText("Account Number:");
 
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("BALANCE");
 
-        Balance.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        Balance.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         Balance.setForeground(new java.awt.Color(255, 255, 255));
         Balance.setText("P2,000,000");
 
-        Back.setBackground(new java.awt.Color(51, 204, 0));
-        Back.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setBackground(new java.awt.Color(255, 255, 0));
+        Back.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         Back.setText("BACK");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -779,7 +796,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("PHP");
 
@@ -796,22 +813,23 @@ public class Transaction extends javax.swing.JFrame {
             ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ViewBalanceLayout.createSequentialGroup()
                 .addGroup(ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(ViewBalanceLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(bankname)
-                                .addComponent(accnumber)))
-                        .addGroup(ViewBalanceLayout.createSequentialGroup()
-                            .addGap(113, 113, 113)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ViewBalanceLayout.createSequentialGroup()
-                            .addGap(64, 64, 64)
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Balance)))
-                    .addComponent(Back))
-                .addContainerGap(244, Short.MAX_VALUE))
+                    .addGroup(ViewBalanceLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bankname)
+                            .addComponent(accnumber)))
+                    .addGroup(ViewBalanceLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Balance))
+                    .addGroup(ViewBalanceLayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel5))
+                    .addGroup(ViewBalanceLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(Back)))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         ViewBalanceLayout.setVerticalGroup(
             ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -826,27 +844,27 @@ public class Transaction extends javax.swing.JFrame {
                 .addGroup(ViewBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Balance)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(Back)
-                .addGap(31, 31, 31))
+                .addGap(18, 18, 18))
         );
 
         Withdraw.setForeground(new java.awt.Color(255, 255, 255));
 
-        banknamew.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        banknamew.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         banknamew.setForeground(new java.awt.Color(255, 255, 255));
         banknamew.setText("BankName");
 
-        accnumberw.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        accnumberw.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         accnumberw.setForeground(new java.awt.Color(255, 255, 255));
         accnumberw.setText("Account Number:");
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("WITHDRAW AMOUNT:");
 
         CancelW.setBackground(new java.awt.Color(102, 255, 0));
-        CancelW.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CancelW.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CancelW.setForeground(new java.awt.Color(255, 255, 255));
         CancelW.setText("CANCEL");
         CancelW.addActionListener(new java.awt.event.ActionListener() {
@@ -856,7 +874,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         CLEAR1.setBackground(new java.awt.Color(255, 0, 0));
-        CLEAR1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CLEAR1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CLEAR1.setForeground(new java.awt.Color(255, 255, 255));
         CLEAR1.setText("CLEAR");
         CLEAR1.addActionListener(new java.awt.event.ActionListener() {
@@ -865,6 +883,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
+        WithdrawAmount.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         WithdrawAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WithdrawAmountActionPerformed(evt);
@@ -891,25 +910,25 @@ public class Transaction extends javax.swing.JFrame {
         WithdrawLayout.setHorizontalGroup(
             WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WithdrawLayout.createSequentialGroup()
+                .addComponent(CancelW)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CLEAR1))
+            .addGroup(WithdrawLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(WithdrawLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(banknamew)
-                            .addComponent(accnumberw)))
-                    .addGroup(WithdrawLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel6))
-                    .addGroup(WithdrawLayout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(WithdrawAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(accnumberw))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WithdrawLayout.createSequentialGroup()
+                        .addGap(0, 114, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(117, 117, 117))))
             .addGroup(WithdrawLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(CancelW)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                .addComponent(CLEAR1)
-                .addGap(34, 34, 34))
+                .addGap(140, 140, 140)
+                .addComponent(WithdrawAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         WithdrawLayout.setVerticalGroup(
             WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -918,33 +937,36 @@ public class Transaction extends javax.swing.JFrame {
                 .addComponent(banknamew)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(accnumberw)
-                .addGap(56, 56, 56)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(WithdrawAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CancelW)
-                    .addComponent(CLEAR1))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGroup(WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(WithdrawLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(WithdrawAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(112, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WithdrawLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(WithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CancelW)
+                            .addComponent(CLEAR1)))))
         );
 
         Deposit.setForeground(new java.awt.Color(255, 255, 255));
 
-        banknamed.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        banknamed.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         banknamed.setForeground(new java.awt.Color(255, 255, 255));
         banknamed.setText("BankName");
 
-        accnumberd.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        accnumberd.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         accnumberd.setForeground(new java.awt.Color(255, 255, 255));
         accnumberd.setText("Account Number:");
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("DEPOSIT AMOUNT:");
 
         CANCELd.setBackground(new java.awt.Color(102, 255, 0));
-        CANCELd.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CANCELd.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CANCELd.setForeground(new java.awt.Color(255, 255, 255));
         CANCELd.setText("CANCEL");
         CANCELd.addActionListener(new java.awt.event.ActionListener() {
@@ -954,7 +976,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         CLEARd.setBackground(new java.awt.Color(255, 0, 0));
-        CLEARd.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CLEARd.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CLEARd.setForeground(new java.awt.Color(255, 255, 255));
         CLEARd.setText("CLEAR");
         CLEARd.addActionListener(new java.awt.event.ActionListener() {
@@ -990,7 +1012,7 @@ public class Transaction extends javax.swing.JFrame {
                     .addComponent(accnumberd))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DepositLayout.createSequentialGroup()
-                .addGap(0, 157, Short.MAX_VALUE)
+                .addGap(0, 119, Short.MAX_VALUE)
                 .addGroup(DepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Depositamount))
@@ -1007,38 +1029,35 @@ public class Transaction extends javax.swing.JFrame {
                 .addComponent(banknamed)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(accnumberd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Depositamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(65, 65, 65)
                 .addGroup(DepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CANCELd)
-                    .addComponent(CLEARd)))
+                    .addComponent(CLEARd))
+                .addGap(22, 22, 22))
         );
 
         Transfer.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("TRANSFER AMOUNT:");
 
-        transferamount.setBackground(new java.awt.Color(153, 153, 153));
         transferamount.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        transferamount.setForeground(new java.awt.Color(255, 255, 255));
         transferamount.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 transferamountKeyTyped(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Enter Account Number:");
 
-        transferaccnum.setBackground(new java.awt.Color(153, 153, 153));
         transferaccnum.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        transferaccnum.setForeground(new java.awt.Color(255, 255, 255));
         transferaccnum.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 transferaccnumKeyPressed(evt);
@@ -1049,7 +1068,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         CANCELt.setBackground(new java.awt.Color(102, 255, 0));
-        CANCELt.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CANCELt.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CANCELt.setForeground(new java.awt.Color(255, 255, 255));
         CANCELt.setText("CANCEL");
         CANCELt.addActionListener(new java.awt.event.ActionListener() {
@@ -1059,7 +1078,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         CLEARt.setBackground(new java.awt.Color(255, 51, 0));
-        CLEARt.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        CLEARt.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         CLEARt.setForeground(new java.awt.Color(255, 255, 255));
         CLEARt.setText("CLEAR");
         CLEARt.addActionListener(new java.awt.event.ActionListener() {
@@ -1080,24 +1099,24 @@ public class Transaction extends javax.swing.JFrame {
         TransferLayout.setHorizontalGroup(
             TransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TransferLayout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addGroup(TransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(transferamount)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(transferaccnum, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TransferLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel3)))
-                .addContainerGap(146, Short.MAX_VALUE))
-            .addGroup(TransferLayout.createSequentialGroup()
                 .addComponent(CANCELt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CLEARt))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TransferLayout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addGroup(TransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(transferamount)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(TransferLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel3))
+                    .addComponent(transferaccnum, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98))
         );
         TransferLayout.setVerticalGroup(
             TransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TransferLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(transferamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1105,15 +1124,16 @@ public class Transaction extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(transferaccnum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(TransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CANCELt)
-                    .addComponent(CLEARt)))
+                    .addComponent(CLEARt))
+                .addGap(20, 20, 20))
         );
 
         transact.setForeground(new java.awt.Color(255, 255, 255));
 
-        totransact.setBackground(new java.awt.Color(153, 153, 153));
+        totransact.setBackground(new java.awt.Color(102, 102, 102));
         totransact.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         totransact.setForeground(new java.awt.Color(255, 255, 255));
         totransact.addActionListener(new java.awt.event.ActionListener() {
@@ -1130,7 +1150,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Enter Account Number:");
 
@@ -1142,33 +1162,36 @@ public class Transaction extends javax.swing.JFrame {
         transactLayout.setHorizontalGroup(
             transactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(transactLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(transactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(totransact))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGap(106, 106, 106)
+                .addGroup(transactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(transactLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(totransact, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         transactLayout.setVerticalGroup(
             transactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(transactLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(101, 101, 101)
                 .addComponent(jLabel11)
-                .addGap(63, 63, 63)
+                .addGap(18, 18, 18)
                 .addComponent(totransact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         receipt.setForeground(new java.awt.Color(255, 255, 255));
 
         printreceipt.setColumns(20);
-        printreceipt.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        printreceipt.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        printreceipt.setForeground(new java.awt.Color(0, 51, 255));
         printreceipt.setRows(5);
-        printreceipt.setText("***************PEU  BANK***********************");
+        printreceipt.setText("*******************PEU  BANK***************************");
         printreceipt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(printreceipt);
 
         receiptback.setBackground(new java.awt.Color(153, 153, 0));
-        receiptback.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        receiptback.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         receiptback.setForeground(new java.awt.Color(255, 255, 255));
         receiptback.setText("Back");
         receiptback.addActionListener(new java.awt.event.ActionListener() {
@@ -1186,14 +1209,13 @@ public class Transaction extends javax.swing.JFrame {
             receiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
             .addGroup(receiptLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
                 .addComponent(receiptback)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         receiptLayout.setVerticalGroup(
             receiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(receiptback))
         );
@@ -1201,7 +1223,7 @@ public class Transaction extends javax.swing.JFrame {
         toreceipt.setForeground(new java.awt.Color(255, 255, 255));
 
         No.setBackground(new java.awt.Color(255, 51, 51));
-        No.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        No.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         No.setForeground(new java.awt.Color(255, 255, 255));
         No.setText("NO");
         No.addActionListener(new java.awt.event.ActionListener() {
@@ -1211,7 +1233,7 @@ public class Transaction extends javax.swing.JFrame {
         });
 
         Yes.setBackground(new java.awt.Color(153, 153, 0));
-        Yes.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        Yes.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         Yes.setForeground(new java.awt.Color(255, 255, 255));
         Yes.setText("YES");
         Yes.addActionListener(new java.awt.event.ActionListener() {
@@ -1220,6 +1242,7 @@ public class Transaction extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Do you want a receipt for this transaction?");
 
@@ -1237,16 +1260,16 @@ public class Transaction extends javax.swing.JFrame {
                 .addComponent(No)
                 .addContainerGap())
             .addGroup(toreceiptLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel12)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         toreceiptLayout.setVerticalGroup(
             toreceiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toreceiptLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addContainerGap(87, Short.MAX_VALUE)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addGroup(toreceiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Yes)
                     .addComponent(No))
@@ -1277,8 +1300,7 @@ public class Transaction extends javax.swing.JFrame {
                     .addComponent(Withdraw)
                     .addContainerGap()))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addComponent(Deposit)
                     .addContainerGap()))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1316,26 +1338,25 @@ public class Transaction extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Accnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGap(0, 35, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(transaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(34, Short.MAX_VALUE)))
+                    .addContainerGap(38, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addComponent(ViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addGap(0, 36, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(Withdraw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(32, Short.MAX_VALUE)))
+                    .addContainerGap(36, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
                     .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(28, Short.MAX_VALUE)))
+                    .addGap(0, 37, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -1344,26 +1365,26 @@ public class Transaction extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addComponent(choosebank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 33, Short.MAX_VALUE)))
+                    .addGap(0, 37, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(transact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(32, Short.MAX_VALUE)))
+                    .addContainerGap(36, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(receipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(31, Short.MAX_VALUE)))
+                    .addContainerGap(35, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addComponent(EnterPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addGap(0, 36, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(toreceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(34, Short.MAX_VALUE)))
+                    .addContainerGap(38, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1378,7 +1399,7 @@ public class Transaction extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addGap(0, 325, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1930,6 +1951,7 @@ public class Transaction extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
